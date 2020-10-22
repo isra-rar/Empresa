@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Empresa1.Configuration;
 using Empresa1.Data.Context;
 using Empresa1.Models;
 using Microsoft.AspNetCore.Builder;
@@ -31,12 +33,15 @@ namespace Empresa1
             services.AddControllers();
 
             services.AddDbContext<EmpresaContext>(options =>
-               options.UseMySql(Configuration.GetConnectionString("EmpresaContext"), builder =>
-                   builder.MigrationsAssembly("Empresa1")));
+            {
+                options.UseMySql(Configuration.GetConnectionString("EmpresaContext"));
+            });
 
-            services.AddScoped<SeedingService>();
-            services.AddScoped<Funcionario>();
-            services.AddScoped<Departamento>();
+            services.AddAutoMapper(typeof(Startup));
+
+            services.ResolveDepedencies();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
