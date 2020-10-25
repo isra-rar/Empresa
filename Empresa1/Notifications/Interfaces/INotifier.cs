@@ -6,7 +6,7 @@ using Empresa1.Notifications;
 
 namespace Empresa1.Interfaces
 {
-    public interface INotification
+    public interface INotifier
     {
         bool HaveNotification();
         List<Notification> GetNotifications();

@@ -12,9 +12,9 @@ namespace Empresa1.Services
 {
     public class BaseService
     {
-        private readonly INotification _notification;
+        private readonly INotifier _notification;
 
-        public BaseService(INotification notification)
+        public BaseService(INotifier notification)
         {
             _notification = notification;
         }

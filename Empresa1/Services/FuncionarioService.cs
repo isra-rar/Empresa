@@ -15,7 +15,7 @@ namespace Empresa1.Services
         private readonly IFuncionarioRepository _funcionarioRepository;
 
         public FuncionarioService(IFuncionarioRepository funcionarioRepository,
-            INotification notification) : base(notification)
+            INotifier notification) : base(notification)
         {
             _funcionarioRepository = funcionarioRepository;
         }

@@ -1,6 +1,9 @@
 ﻿using Empresa1.Data.Context;
 using Empresa1.Data.Repository;
 using Empresa1.Interfaces;
+using Empresa1.Notifications;
+using Empresa1.Services;
+using Empresa1.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -17,7 +20,13 @@ namespace Empresa1.Configuration
 
             services.AddScoped<EmpresaContext>();
             services.AddScoped<SeedingService>();
+            services.AddScoped<INotifier, Notifier>();
+
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddScoped<IFuncionarioService, FuncionarioService>();
+
+            services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
+            services.AddScoped<IDepartamentoService, DepartamentoService>();
 
             return services;
         }

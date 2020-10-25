@@ -8,5 +8,6 @@ namespace Empresa1.Interfaces
 {
     public interface IFuncionarioRepository : IRepository<Funcionario>
     {
+
     }
 }

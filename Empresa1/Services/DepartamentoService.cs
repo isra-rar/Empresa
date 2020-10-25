@@ -14,7 +14,7 @@ namespace Empresa1.Services
         private readonly IDepartamentoRepository _departamentoRepository;
 
         public DepartamentoService(IDepartamentoRepository departamentoRepository,
-            INotification notification) : base(notification)
+            INotifier notification) : base(notification)
         {
             _departamentoRepository = departamentoRepository;
         }

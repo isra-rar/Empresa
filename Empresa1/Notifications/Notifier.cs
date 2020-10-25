@@ -6,7 +6,7 @@ using Empresa1.Interfaces;
 
 namespace Empresa1.Notifications
 {
-    public class Notifier : INotification
+    public class Notifier : INotifier
     {
         private List<Notification> _notifications;
 
